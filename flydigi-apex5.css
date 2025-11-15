@@ -1,0 +1,28 @@
+/* Flydigi Apex 5 simple GPV skin
+   NOTE: This is a basic example CSS for GamePadViewer that places a single background image.
+   For perfect alignment and button hitboxes you'd normally use a sliced image + precise positions.
+   Save this CSS and the skin.png in the same folder and use the raw file URL as Custom CSS URL in GPV.
+*/
+
+.gpv-root {
+  width: 800px;
+  height: 500px;
+  background: url("skin.png") no-repeat center/contain;
+}
+
+/* Example selectors GPV uses for showing button highlights.
+   These rules assume GPV will append classes like .btn-a .active to highlight buttons.
+   If your GPV instance uses different selectors, the skin still works as a background.
+*/
+
+.gpv-root .button {
+  position: absolute;
+  opacity: 0;
+  transition: opacity .05s linear;
+}
+
+/* make "visible" when active (this is a generic approach) */
+.gpv-root .button.active {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+}
